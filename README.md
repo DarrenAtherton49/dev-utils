@@ -1,2 +1,2 @@
-# dev-utils
-A collection of useful files for software development
+# Dev Utils
+A collection of useful files for software development.

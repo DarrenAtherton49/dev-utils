@@ -1,0 +1,42 @@
+[colors]
+   ui = auto
+ [color "branch"]
+   current = yellow reverse
+   local = yellow
+   remote = green
+ [color "diff"]
+   meta = yellow bold
+   frag = magenta bold
+   old = red bold
+   new = green bold
+ [color "status"]
+   added = yellow
+   changed = green
+   untracked = cyan
+
+[color]
+  ui = true
+[color "diff"]
+  whitespace = red reverse
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  dt = difftool
+  dc = diff --cached
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = ls-files
+  dts = !sh -c 'git difftool ${1-head}~1..${1-head}' -
+  dtc = difftool --cached
+
+  # Show files ignored by git:
+  ign = ls-files -o -i --exclude-standard
+  bp = big-picture
+  recent = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
+  oldest-ancestor = !zsh -c 'diff -u <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
