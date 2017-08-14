@@ -34,6 +34,7 @@
   ls = ls-files
   dts = !sh -c 'git difftool ${1-head}~1..${1-head}' -
   dtc = difftool --cached
+  smu = submodule update
 
   # Show files ignored by git:
   ign = ls-files -o -i --exclude-standard
