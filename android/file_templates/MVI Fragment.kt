@@ -45,6 +45,11 @@ class ${NAME} : BaseFragment<${MVI_TYPE}Action, ${MVI_TYPE}State, ${MVI_TYPE}Vie
         initRecyclerView()
     }
     
+    override fun onDestroyView() {
+        recyclerView.adapter = null
+        super.onDestroyView()
+    }
+    
     override fun onMenuItemClicked(menuItem: MenuItem): Boolean  = false
     
     override fun renderState(state: ${MVI_TYPE}State) {}
