@@ -7,9 +7,6 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
 import dagger.Provides
-import dev.darrenatherton.growthjournal.presentation.main.MainComponent
-import dev.darrenatherton.growthjournal.util.injection.ViewScope
-import dev.darrenatherton.growthjournal.util.threading.RxSchedulers
 import javax.inject.Named
 
 @ViewScope
@@ -41,13 +38,13 @@ object ${MVI_TYPE}Module {
     
     @JvmStatic
     @Provides
-    @Named(${MVI_TYPE}ViewModelFactory.NAME)
+    @Named(${MVI_TYPE}ViewModel.Factory.NAME)
     @ViewScope
     internal fun provideViewModelFactory(
         initialState: ${MVI_TYPE}State?,
         schedulers: RxSchedulers
     ): ViewModelProvider.Factory {
-        return ${MVI_TYPE}ViewModelFactory(
+        return ${MVI_TYPE}ViewModel.Factory(
             initialState = initialState,
             schedulers = schedulers
         )

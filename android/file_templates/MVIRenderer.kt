@@ -2,8 +2,6 @@
 #end
 
 import android.content.Context
-import dev.darrenatherton.growthjournal.presentation.util.groupie.Item
-import dev.darrenatherton.growthjournal.util.injection.ViewScope
 import javax.inject.Inject
 
 @ViewScope
